@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <main class="row overflow-auto" id="corps">
+ <div >
+ <!--full screen affichage de la photo-->      
+            <div class="overlay">
+                <img src="" class="img-full" alt="">
+                <div class="closeMe">X</div>
+            </div>
+ </div>
+ {% for photographe in photographes %}
+            <div class="col-sm-8">
+            
+                <!-- information sur le photogrpahe 
+                NOM et Prenom provenant de la BDD
+                
+                Puis la description du photographe provenant de la BDD ( le lorem ipsum est autorisé pour les descriptions)
+            
+                -->
+            <h2 style="text-align:center">{{ photographe.nomPhotographe }} {{ photographe.prenomPhotographe}} </h2>
+                <br>
+                <p>{{ photographe.descriptionPhotographe}} </p>
+            </div>
+            <div class="col-sm-4 d-flex justify-content-center align-items-center">
+                
+                <!-- image du photographe provenant de la bdd-->
+                
+                <img src="{{asset('front/MEDIAS/photos/')}}{{ photographe.avatarPhotographe}}" class=" img-thumbnail"  alt="welcome">
+                
+            </div>
+            {% endfor %}
+        </main>
+{% endblock %}

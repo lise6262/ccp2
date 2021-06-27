@@ -1,0 +1,22 @@
+<div class="wrapper-content">
+    <div class="container-fluid">
+        {{ form_start(form) }}
+            <br>
+            {{ form_row(form.nom_photographe, {'attr': {'class': 'form-control'}}) }}
+            <br>
+            {{ form_row(form.prenom_photographe, {'attr': {'class': 'form-control'}}) }}
+           <br>
+            {{ form_row(form.email_photographe, {'attr': {'class': 'form-control'}}) }}
+            <br>
+            {{ form_row(form.description_photographe, {'attr': {'class': 'form-control'}}) }}
+            <br>
+            {{ form_row(form.avatar_photographe, {'attr': {'class': 'form-control'}}) }}
+           <br>
+             
+             <div class="container text-center">
+            <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+             </div>
+   
+        {{ form_end(form) }}
+        </div>
+     </div>

@@ -1,0 +1,66 @@
+<div class="wrapper-content">
+    <div class="container-fluid">
+        {{ form_start(form) }}
+            <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.url_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+             <div class="col-md-6">
+            {{ form_row(form.titre_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+               <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.exif_dimensions_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+             <div class="col-md-6">
+            {{ form_row(form.exif_speed_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+            <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.exif_apperture_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+             <div class="col-md-6">
+            {{ form_row(form.exif_iso_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+             
+             <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.exif_focale_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+            {{ form_row(form.exif_objectif_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+              <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.exif_cam_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+            {{ form_row(form.categories, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+              <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.techniques, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            <div class="col-md-6">
+            {{ form_row(form.photographe, {'attr': {'class': 'form-control'}}) }}
+            </div>
+            </div>
+             <div class="row">
+            <div class="col-md-6">
+            {{ form_row(form.exif_date_photos, {'attr': {'class': 'form-control'}}) }}
+            </div>
+         </div>
+         <br>
+             <div class="row">
+             <div class="text-center">
+            <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+             </div>
+   
+        {{ form_end(form) }}
+    </div>
+     </div>

@@ -1,0 +1,17 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edit Contact{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Edit Contact</h1>
+
+    {{ include('contact_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('contact_crud_index') }}">Retour à la liste</a>
+
+    {{ include('contact_crud/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

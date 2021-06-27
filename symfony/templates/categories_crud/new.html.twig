@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Nouvelle Catégorie {% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Créer une nouvelle catégorie</h1>
+
+    {{ include('categories_crud/_form.html.twig') }}
+
+    <a href="{{ path('categories_crud_index') }}">Retour à la liste</a>
+    </div>
+    </div>
+{% endblock %}

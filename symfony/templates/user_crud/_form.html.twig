@@ -1,0 +1,21 @@
+<div class="wrapper-content">
+    <div class="container-fluid">
+        {{ form_start(form) }}
+           
+                {{ form_row(form.email) }}
+                <br>
+                {{ form_row(form.password) }}
+                <br>
+                {{ form_row(form.roles) }}
+                <br>
+                {{ form_row(form.isVerified) }}
+               <br>
+                
+                <div class="text-center">
+                <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+             </div>
+             
+   
+        {{ form_end(form) }}
+    </div>
+ </div>

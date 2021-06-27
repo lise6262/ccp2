@@ -1,0 +1,67 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Photos{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Photos</h1>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ photo.id }}</td>
+            </tr>
+            <tr>
+                <th>Url_photos</th>
+                <td>{{ photo.urlPhotos }}</td>
+            </tr>
+            <tr>
+                <th>Titre_photos</th>
+                <td>{{ photo.titrePhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_dimensions_photos</th>
+                <td>{{ photo.exifDimensionsPhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_date_photos</th>
+                <td>{{ photo.exifDatePhotos ? photo.exifDatePhotos|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Exif_speed_photos</th>
+                <td>{{ photo.exifSpeedPhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_apperture_photos</th>
+                <td>{{ photo.exifApperturePhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_iso_photos</th>
+                <td>{{ photo.exifIsoPhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_focale_photos</th>
+                <td>{{ photo.exifFocalePhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_objectif_photos</th>
+                <td>{{ photo.exifObjectifPhotos }}</td>
+            </tr>
+            <tr>
+                <th>Exif_cam_photos</th>
+                <td>{{ photo.exifCamPhotos }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('photos_crud_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('photos_crud_edit', {'id': photo.id}) }}">editer</a>
+
+    {{ include('photos_crud/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

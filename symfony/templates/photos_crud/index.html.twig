@@ -1,0 +1,58 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Photos index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Photos index</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Url_photos</th>
+                <th>Titre_photos</th>
+                <th>Exif_dimensions_photos</th>
+                <th>Exif_date_photos</th>
+                <th>Exif_speed_photos</th>
+                <th>Exif_apperture_photos</th>
+                <th>Exif_iso_photos</th>
+                <th>Exif_focale_photos</th>
+                <th>Exif_objectif_photos</th>
+                <th>Exif_cam_photos</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for photo in photos %}
+            <tr>
+                <td>{{ photo.id }}</td>
+                <td>{{ photo.urlPhotos }}</td>
+                <td>{{ photo.titrePhotos }}</td>
+                <td>{{ photo.exifDimensionsPhotos }}</td>
+                <td>{{ photo.exifDatePhotos ? photo.exifDatePhotos|date('d/m/Y') : '' }}</td>
+                <td>{{ photo.exifSpeedPhotos }}</td>
+                <td>{{ photo.exifApperturePhotos }}</td>
+                <td>{{ photo.exifIsoPhotos }}</td>
+                <td>{{ photo.exifFocalePhotos }}</td>
+                <td>{{ photo.exifObjectifPhotos }}</td>
+                <td>{{ photo.exifCamPhotos }}</td>
+                <td>
+                    <a href="{{ path('photos_crud_show', {'id': photo.id}) }}">show</a>
+                    <a href="{{ path('photos_crud_edit', {'id': photo.id}) }}">edit</a>
+                </td>
+            </tr>
+            </div>
+        {% else %}
+            <tr>
+                <td colspan="12">Aucun résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('photos_crud_new') }}">Créer un nouveau</a>
+    </div>
+    </div>
+{% endblock %}

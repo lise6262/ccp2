@@ -1,0 +1,199 @@
+/*document*/
+@font-face {
+    font-family: 'canonregular';
+    src: url('fonts/canon/canon-webfont.eot');
+    src: url('fonts/canon/canon-webfont.eot?#iefix') format('embedded-opentype'),
+        url('fonts/canon/canon-webfont.woff') format('woff'),
+        url('fonts/canon/canon-webfont.ttf') format('truetype'),
+        url('fonts/canon/canon-webfont.svg#canonregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'GothamPro';
+    src: url('fonts/gotham/GothamPro.eot');
+    src: url('fonts/gotham/GothamPro.eot?#iefix') format('embedded-opentype'),
+        url('fonts/gotham/GothamPro.woff') format('woff'),
+        url('fonts/gotham/GothamPro.ttf') format('truetype'),
+        url('fonts/gotham/GothamPro.svg#GothamPro') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+html{
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: canonregular;
+    cursor: pointer;
+   
+}
+li{
+    list-style: none;
+}
+/*body*/
+a,p.titre {
+    font-family: canonregular;
+}
+p {
+    font-family: GothamPro;
+}
+
+/*themes proposes pour le site*/
+/*theme par defaut*/
+#default {
+    background-color: #6e7276;
+    color: white;
+}
+/*Personnalisation scrollbar*/
+#default > main::-webkit-scrollbar {
+    width: 3px;
+}
+#default > main::-webkit-scrollbar-track {
+    background-color: #6e7276;
+}
+#default > main::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(110, 114, 118, 1)), color-stop(50%, rgba(188, 0, 36, 1)), color-stop(70%, rgba(110, 114, 118, 1)));
+    background: linear-gradient(rgba(110, 114, 118, 1) 30%, rgba(188, 0, 36, 1) 50%, rgba(110, 114, 118, 1) 70%);
+}
+
+/*theme blanc*/
+#white {
+    background-color: white;
+    color: #6e7276;
+}
+/*Personnalisation scrollbar*/
+#white > main::-webkit-scrollbar {
+    width: 3px;
+}
+#white > main::-webkit-scrollbar-track {
+    background-color: white;
+}
+#white > main::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(255, 255, 255, 1)), color-stop(50%, rgba(188, 0, 36, 1)), color-stop(70%, rgba(255, 255, 255, 1)));
+    background: linear-gradient(rgba(255, 255, 255, 1) 30%, rgba(188, 0, 36, 1) 50%, rgba(255, 255, 255, 1) 70%);
+}
+
+/*theme noir*/
+#black {
+    background-color: black;
+    color: white;
+}
+/*Personnalisation scrollbar*/
+#black > main::-webkit-scrollbar {
+    width: 3px;
+}
+#black > main::-webkit-scrollbar-track {
+    background-color: black;
+}
+#black > main::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(0, 0, 0, 1)), color-stop(50%, rgba(188, 0, 36, 1)), color-stop(70%, rgba(0, 0, 0, 1)));
+    background: linear-gradient(rgba(0, 0, 0, 1) 30%, rgba(188, 0, 36, 1) 50%, rgba(0, 0, 0, 1) 70%);
+}
+
+/*theme gris*/
+#grey {
+    background-color: #6e7276;
+    color: white;
+}
+/*Personnalisation scrollbar*/
+#grey > main::-webkit-scrollbar {
+    width: 3px;
+}
+#grey > main::-webkit-scrollbar-track {
+    background-color: #6e7276;
+}
+#grey > main::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(30%, rgba(110, 114, 118, 1)), color-stop(50%, rgba(188, 0, 36, 1)), color-stop(70%, rgba(110, 114, 118, 1)));
+    background: linear-gradient(rgba(110, 114, 118, 1) 30%, rgba(188, 0, 36, 1) 50%, rgba(110, 114, 118, 1) 70%);
+}
+
+
+/*header*/
+/*apparence générale du header*/
+#entete {
+    min-height: 17%;
+    border-bottom: solid 3px #BC0024;
+}
+
+#nomSite{
+    color:#BC0024;
+    font-family: canonregular;
+}
+/*personnalisation du menu et des liens*/
+/*taille de la dropbox apparence des icones pour les choix des thèmes*/
+#dropdownMenuStyle {
+    min-width: inherit;
+}
+#blackTheme {
+    color: black;
+}
+#greyTheme {
+    color: #6e7276;
+}
+#whiteTheme {
+    color: white;
+}
+/*apparences des liens en forme de boutons*/
+#menu a,#menu div.dropdown-menu,#menu button {
+    background-color: #efefef;
+    color: #BC0024;
+}
+
+/*main*/
+/*apparence générale du main*/
+#corps {
+    
+    height: 66.5%;
+    
+}
+
+/*footer*/
+/*apparence générale du footer*/
+#pied {
+    border-top: solid 3px #BC0024;
+    height: 15%;
+}
+#pied a{
+    background-color: #efefef;
+    color: #BC0024;
+}
+
+#middleFooter1{
+
+    font-size: 12px;
+}
+/* pour l'affichage de la photo en grand */
+.overlay {
+    position: absolute;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    padding-top: 5%;
+    padding-bottom: 5%;
+    text-align: center;
+    z-index: 5;
+  }
+  /*taille de l image*/
+.img-full{
+    height: 100%;
+}
+  /*pour fermer X */
+.closeMe{
+    position: absolute;
+    mix-blend-mode: difference;
+    filter: invert(1);
+    font-size: 25px;
+    font-weight: bold;
+    left: 73%;
+    top: 10%;
+    cursor: crosshair;
+    color: red;
+}
+  

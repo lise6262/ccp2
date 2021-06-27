@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<main>
+<div class="row overflow-auto" id="corps">
+<div >
+ <!--full screen affichage de la photo-->      
+            <div class="overlay">
+                <img src="" class="img-full" alt="">
+                <div class="closeMe">X</div>
+            </div>
+ </div>
+ <div class="row row-cols-1 row-cols-md-3 g-4">
+  
+  {% for technique in techniques %}
+  <div class="col">
+    <div class="card h-100">
+      <img src="{{asset('front/MEDIAS/photos/')}}{{ technique.imageLogoTechniques }}" class="card-img-top" alt="...">
+      <div class="card-body" style="color:black;">
+        <h5 class="card-title">{{ technique.nomTechniques }}</h5>
+        <p class="card-text">{{ technique.descriptionCourteTechniques }}</p>
+      </div>
+      <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">
+                                    <a href="{{ path('techniques_details', {'id': technique.id}) }}">Voir</a>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+  {% endfor %}
+  
+    </div>
+  </div>
+  
+  </main>
+  
+{% endblock %}

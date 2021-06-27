@@ -1,0 +1,100 @@
+{% extends 'baseLogin.html.twig' %}
+
+
+{% block body %}
+{% block main %}
+    <main>
+        <div>
+            <!--full screen affichage de la photo-->      
+            <div class="overlay">
+                <img src="" class="img-full" alt="">
+                <div class="closeMe">X</div>
+            </div>
+        </div>
+    
+          <div id="centerdiv" class="h-100">
+            <div class="h-100"> 
+            
+            
+            
+              {% for photo in categories.relationPhotos  %}
+              </br>
+              
+                <div class="row h-100 align-items-center w-100" id="zoom">
+                    <img src="{{asset('front/MEDIAS/photos/')}}{{ photo.urlPhotos }}" id="{{ photo.id }}" class="col-5 ms-auto border border-dark  p-0 img-thumbnail" alt="" style="width:30%;heigth:50%;">
+                    <div class="col-7">
+                        <div class="row mb-3 w-50 mx-auto">
+                             <h3 class="text-center align-self-start">{{ photo.titrePhotos }}</h3>
+                        
+                        </div>
+                            <div class="row w-75 mx-auto">
+                          
+                
+                <div class="col col-md-6">
+                    <ul>
+                        <li>Date de création : {{ photo.exifDatePhotos ? photo.exifDatePhotos|date('d/m/Y') : '' }}</li>
+                        
+                        <li>Objectif utilisé : {{ photo.exifObjectifPhotos }} </li>
+                        <li>Longueur de la focale : {{ photo.exifFocalePhotos }} </li>
+                        <li>Dimension : {{ photo.exifDimensionsPhotos }} </li>
+                        </ul>
+                </div>
+                <div class="col col-md-6 ">
+                
+                    <ul>
+                        <li> Speed: {{ photo.exifSpeedPhotos }} </li>
+                        <li>Cam photo : {{ photo.exifCamPhotos }} </li>
+                        <li>Iso : {{ photo.exifIsoPhotos }}</li>
+                        <li>apperture photos :{{ photo.exifApperturePhotos }} </li>
+                        <li>categorie: {{ photo.categories }}</li>
+                        </ul>
+                </div>
+            </div>
+             </div>
+            </div>
+         </div> 
+         </br>
+                    {% endfor %}
+                   
+        </main>
+
+{% endblock %}
+{% block content %}
+    
+
+
+<div class="row">
+
+        <div class="col-12">
+            <div id="carouselPhoto" class="carousel slide" data-bs-ride="carousel" data-bs-interval="false">
+                <div class="carousel-inner">
+                
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                         <img src="{{asset('front/MEDIAS/photos/rudy.png')}}" alt="" class="img-thumbnail w-25">
+                      
+                        </div>
+                    </div>
+                    {%  for photo in categories.relationPhotos %}
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center photo-btn">
+                            <img id="{{ photo.id }}" src="{{asset('front/MEDIAS/photos/')}}{{ photo.urlPhotos}}" alt="" class="img-thumbnail w-25 presentation">
+                        </div>
+                    </div>
+                    {%endfor%}
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhoto" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Précédent</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselPhoto" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Suivant</span>
+                </button>
+            </div>
+        </div>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+
+{% endblock %}
+{% endblock %}

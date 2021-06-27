@@ -1,0 +1,48 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Photographe index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Photographe index</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_photographe</th>
+                <th>Prenom_photographe</th>
+                <th>Email_photographe</th>
+                <th>Avatar_photographe</th>
+                <th>Description_photographe</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for photographe in photographes %}
+            <tr>
+                <td>{{ photographe.id }}</td>
+                <td>{{ photographe.nomPhotographe }}</td>
+                <td>{{ photographe.prenomPhotographe }}</td>
+                <td>{{ photographe.emailPhotographe }}</td>
+                <td>{{ photographe.avatarPhotographe }}</td>
+                <td>{{ photographe.descriptionPhotographe }}</td>
+                <td>
+                    <a href="{{ path('photographe_crud_show', {'id': photographe.id}) }}">show</a>
+                    <a href="{{ path('photographe_crud_edit', {'id': photographe.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('photographe_crud_new') }}">Créer un nouveau</a>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Edition Photographe{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Editer Photographe</h1>
+
+    {{ include('photographe_crud/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('photographe_crud_index') }}">Retour à la liste</a>
+
+    {{ include('photographe_crud/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

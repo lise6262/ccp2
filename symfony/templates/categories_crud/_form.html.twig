@@ -1,0 +1,29 @@
+<div class="wrapper-content">
+    <div class="container-fluid">
+        {{ form_start(form) }}
+        <div class="col-sm-12">
+           <div class="form-group">
+                {{ form_row(form.nom_categories, {'attr': {'class': 'form-control'}}) }}
+            </div>
+                  <br>
+                 <div class="form-group">
+                {{ form_row(form.description_categories, {'attr': {'class': 'form-control'}}) }}
+                </div>
+               <div class="form-group">
+                {{ form_row(form.description_longue_categories, {'attr': {'class': 'form-control'}}) }}
+               </div>
+               <div class="form-group">
+                {{ form_row(form.image_logo_categories, {'attr': {'class': 'form-control'}}) }}
+              
+             </div>
+  
+                {{ form_row(form.relation_photos) }}
+              
+                <div class="text-center">
+                <button class="btn btn-success">{{ button_label|default('Enregistrer') }} </button>
+             </div>
+             
+        {{ form_end(form) }}
+    </div>
+ </div>
+ </div>

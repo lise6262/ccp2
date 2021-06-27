@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+     <main class="row overflow-auto" id="corps">
+    
+         <div class="col-12 h-100 d-flex justify-content-center align-items-center">
+                
+          <!--full screen affichage de la photo-->      
+            <div class="overlay">
+                <img src="" class="img-full" alt="">
+                <div class="closeMe">X</div>
+            </div>
+    
+<!-- Photo aleatoire provenant de la bdd-->
+             {% for photo in photo  %}
+                
+                <img src="{{asset('front/MEDIAS/photos/')}}{{ photo.urlPhotos}}" class="img-thumbnail"  alt="welcome">
+               {% endfor %} 
+            </div>
+        </main>
+      
+{% endblock %}
+

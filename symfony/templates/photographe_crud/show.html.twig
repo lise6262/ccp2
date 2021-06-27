@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Photographe{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Photographe</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ photographe.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_photographe</th>
+                <td>{{ photographe.nomPhotographe }}</td>
+            </tr>
+            <tr>
+                <th>Prenom_photographe</th>
+                <td>{{ photographe.prenomPhotographe }}</td>
+            </tr>
+            <tr>
+                <th>Email_photographe</th>
+                <td>{{ photographe.emailPhotographe }}</td>
+            </tr>
+            <tr>
+                <th>Avatar_photographe</th>
+                <td>{{ photographe.avatarPhotographe }}</td>
+            </tr>
+            <tr>
+                <th>Description_photographe</th>
+                <td>{{ photographe.descriptionPhotographe }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('photographe_crud_index') }}">Retour à la liste</a>
+
+    <a href="{{ path('photographe_crud_edit', {'id': photographe.id}) }}">edit</a>
+
+    {{ include('photographe_crud/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

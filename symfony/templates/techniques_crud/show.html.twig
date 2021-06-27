@@ -1,0 +1,43 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Techniques{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Techniques</h1>
+<div class="table-responsive">
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ technique.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom_techniques</th>
+                <td>{{ technique.nomTechniques }}</td>
+            </tr>
+            <tr>
+                <th>Description_longue_techniques</th>
+                <td>{{ technique.descriptionLongueTechniques }}</td>
+            </tr>
+            <tr>
+                <th>Description_courte_techniques</th>
+                <td>{{ technique.descriptionCourteTechniques }}</td>
+            </tr>
+            <tr>
+                <th>Image_logo_techniques</th>
+                <td>{{ technique.imageLogoTechniques }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('techniques_crud_index') }}">retour à la liste</a>
+
+    <a href="{{ path('techniques_crud_edit', {'id': technique.id}) }}">editer</a>
+
+    {{ include('techniques_crud/_delete_form.html.twig') }}
+    </div>
+    </div>
+{% endblock %}

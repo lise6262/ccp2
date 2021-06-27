@@ -1,0 +1,15 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Nouvelles Techniques{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Créer une nouvelle Technique</h1>
+
+    {{ include('techniques_crud/_form.html.twig') }}
+
+    <a href="{{ path('techniques_crud_index') }}">Retour à la liste</a>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Techniques index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Techniques index</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_techniques</th>
+                <th>Description_longue_techniques</th>
+                <th>Description_courte_techniques</th>
+                <th>Image_logo_techniques</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for technique in techniques %}
+            <tr>
+                <td>{{ technique.id }}</td>
+                <td>{{ technique.nomTechniques }}</td>
+                <td>{{ technique.descriptionLongueTechniques }}</td>
+                <td>{{ technique.descriptionCourteTechniques }}</td>
+                <td>{{ technique.imageLogoTechniques }}</td>
+                <td>
+                    <a href="{{ path('techniques_crud_show', {'id': technique.id}) }}">show</a>
+                    <a href="{{ path('techniques_crud_edit', {'id': technique.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('techniques_crud_new') }}">Créer un nouveau</a>
+    </div>
+    </div>
+{% endblock %}

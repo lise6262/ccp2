@@ -1,0 +1,22 @@
+<div class="wrapper-content">
+    <div class="container-fluid">
+        {{ form_start(form) }}
+          
+                {{ form_row(form.nom_techniques, {'attr': {'class': 'form-control'}}) }}
+                <br>
+                  
+                {{ form_row(form.description_courte_techniques, {'attr': {'class': 'form-control'}}) }}
+                <br>
+                
+                {{ form_row(form.description_longue_techniques, {'attr': {'class': 'form-control'}}) }}
+                <br>
+                {{ form_row(form.image_logo_techniques, {'attr': {'class': 'form-control'}}) }}
+                <br>
+                <div class="text-center">
+                <button class="btn btn-success">{{ button_label|default('Enregistrer') }}</button>
+             </div>
+             
+   
+        {{ form_end(form) }}
+    </div>
+ </div>

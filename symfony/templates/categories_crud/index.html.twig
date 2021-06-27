@@ -1,0 +1,49 @@
+{% extends 'baseAdmin.html.twig' %}
+
+{% block title %}Categories index{% endblock %}
+
+{% block body %}
+<div class="content-wrapper">
+<div class="container-fluid">
+    <h1>Categories index</h1>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom_categories</th>
+                <th>Description courte categories</th>
+                <th>Description longue categories</th>
+                <th>Image logo </th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.nomCategories }}</td>
+                <td>{{ category.descriptionCategories }}</td>
+                <td>{{ category.descriptionLongueCategories }}</td>
+                <td>{{ category.imageLogoCategories }}</td>
+                </tr>
+                </tr>
+                <td>
+                    <a href="{{ path('categories_crud_show', {'id': category.id}) }}">Voir</a>
+                    <a href="{{ path('categories_crud_edit', {'id': category.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">Aucun résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+
+    <a href="{{ path('categories_crud_new') }}">Créer une catégorie</a>
+
+    <div>
+    </div>
+{% endblock %}
